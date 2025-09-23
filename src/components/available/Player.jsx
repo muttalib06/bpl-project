@@ -7,7 +7,7 @@ const Player = ({ player }) => {
   return (
     <div className="card bg-base-100 w-96 shadow-sm p-4">
       <figure>
-        <img src={player.img} className="w-full" />
+        <img src={player.img} className="w-full h-56 rounded-lg" />
       </figure>
       <div className="p-2 space-y-2 border-b-1 border-gray-300">
         <div className="flex items-center gap-2">
