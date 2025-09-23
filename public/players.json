@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "img": "https://i.ibb.co.com/Z6zNrvtt/Virat-Kohli-India-celebrates-50th-century-Cricket-November-15-2023.webp",
+    "name": "Virat Kohli",
+    "price": 2500000,
+    "rating": 9.8,
+    "country": "India",
+    "role": "Batsman"
+  },
+  {
+    "id": 2,
+    "img": "https://i.ibb.co.com/CKr9cS5H/779p0q78-steve-smith-afp-625x300-29-January-25.webp",
+    "name": "Steve Smith",
+    "price": 2200000,
+    "rating": 9.5,
+    "country": "Australia",
+    "role": "Batsman"
+  },
+  {
+    "id": 3,
+    "img": "https://i.ibb.co.com/nMpkTnCp/84522a0c15e2730e8137ef6162579936.png",
+    "name": "Ben Stokes",
+    "price": 2000000,
+    "rating": 9.4,
+    "country": "England",
+    "role": "All-rounder"
+  },
+  {
+    "id": 4,
+    "img": "https://i.ibb.co.com/d4n9xtGf/AFP-20241122-36-N39-GM-v1-High-Res-Cricket-Aus-Ind-1733131187.webp",
+    "name": "Jasprit Bumrah",
+    "price": 1800000,
+    "rating": 9.2,
+    "country": "India",
+    "role": "Bowler"
+  },
+  {
+    "id": 5,
+    "img": "https://i.ibb.co.com/YFjBhnKS/wilium.jpg",
+    "name": "Kane Williamson",
+    "price": 2100000,
+    "rating": 9.6,
+    "country": "New Zealand",
+    "role": "Batsman"
+  },
+  {
+    "id": 6,
+    "img": "https://i.ibb.co.com/ksFV2BdZ/skysports-shaheen-shah-afridi-5537334.jpg",
+    "name": "Shaheen Afridi",
+    "price": 1500000,
+    "rating": 8.9,
+    "country": "Pakistan",
+    "role": "Bowler"
+  },
+  {
+    "id": 7,
+    "img": "https://i.ibb.co.com/99MzyrP5/5218.webp",
+    "name": "David Warner",
+    "price": 1900000,
+    "rating": 9.1,
+    "country": "Australia",
+    "role": "Batsman"
+  },
+  {
+    "id": 8,
+    "img": "https://i.ibb.co.com/WvVp2D9f/rashid.webp",
+    "name": "Rashid Khan",
+    "price": 2000000,
+    "rating": 9.3,
+    "country": "Afghanistan",
+    "role": "Bowler"
+  },
+  {
+    "id": 9,
+    "img": "https://i.ibb.co.com/YFTGwN0X/bd1a632bd0cbd3df136e6b1386be6e82-Y29ud-GVud-HNl-YXJja-GFwa-Swx-Njg2-Mj-U1-NTUy-2-69703789.jpg",
+    "name": "Jos Buttler",
+    "price": 1700000,
+    "rating": 8.8,
+    "country": "England",
+    "role": "Wicketkeeper-Batsman"
+  },
+  {
+    "id": 10,
+    "img": "https://i.ibb.co.com/j9CRZ0q8/1-i2-D04lfp1-IX-Sai5-Qf-Kpb-A.gif",
+    "name": "Babar Azam",
+    "price": 2300000,
+    "rating": 9.7,
+    "country": "Pakistan",
+    "role": "Batsman"
+  },
+  {
+    "id": 11,
+    "img": "https://i.ibb.co.com/dwHPj0sN/62f8838e5fbb9.jpg",
+    "name": "Shakib Al Hasan",
+    "price": 1800000,
+    "rating": 9.0,
+    "country": "Bangladesh",
+    "role": "All-rounder"
+  },
+  {
+    "id": 12,
+    "img": "https://i.ibb.co.com/nNmRjnXF/images.jpg",
+    "name": "Trent Boult",
+    "price": 1600000,
+    "rating": 8.7,
+    "country": "New Zealand",
+    "role": "Bowler"
+  }
+]
