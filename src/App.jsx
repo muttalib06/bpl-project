@@ -8,18 +8,20 @@ import Selected from "./components/selected/Selected";
 const fetchPlayers = () => {
   return fetch("/players.json").then((res) => res.json());
 };
+const playersPromise = fetchPlayers();
 
 function App() {
   const [available, setAvailable] = useState(true);
-  const [coins, setCoins] = useState(0);
+
+  const [availableBalance, setAvailableBalance] = useState(2500000);
   const handleCoinIncrease = (coin) => {
-    const addCoins = coins + coin;
-    setCoins(addCoins);
+    const addCoins = availableBalance + coin;
+    setAvailableBalance(addCoins);
   };
-  const playersPromise = fetchPlayers();
+
   return (
     <>
-      <Navbar coins={coins}></Navbar>
+      <Navbar availableBalance={availableBalance}></Navbar>
       <Banner handleCoinIncrease={handleCoinIncrease}></Banner>
 
       <div className="max-w-[80%] mx-auto flex justify-between items-center my-5">
@@ -46,7 +48,11 @@ function App() {
 
       {available === true ? (
         <Suspense fallback={<Spinner1></Spinner1>}>
-          <AvailablePlayers playersPromise={playersPromise}></AvailablePlayers>
+          <AvailablePlayers
+            availableBalance={availableBalance}
+            setAvailableBalance={setAvailableBalance}
+            playersPromise={playersPromise}
+          ></AvailablePlayers>
         </Suspense>
       ) : (
         <Selected></Selected>

@@ -2,8 +2,16 @@ import React from "react";
 import nameIcon from "../../assets/user 1.png";
 import flagIcon from "../../assets/Group.png";
 
-const Player = ({ player }) => {
-  console.log(player);
+const Player = ({ player, setAvailableBalance, availableBalance }) => {
+  const handleBalance = (playerData) => {
+    const playerPrice = playerData.price;
+    if (availableBalance < playerPrice) {
+      alert("Your Balance is low");
+      return;
+    }
+    const totalBalance = availableBalance - playerPrice;
+    setAvailableBalance(totalBalance);
+  };
   return (
     <div className="card bg-base-100 w-96 shadow-sm p-4">
       <figure>
@@ -33,7 +41,9 @@ const Player = ({ player }) => {
         </div>
         <div className="flex items-center justify-between">
           <h3 className="font-bold">Price:{player.price} </h3>
-          <button className="btn">Choose Player</button>
+          <button onClick={() => handleBalance(player)} className="btn">
+            Choose Player
+          </button>
         </div>
       </div>
     </div>

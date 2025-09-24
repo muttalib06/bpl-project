@@ -14,7 +14,7 @@ const Banner = ({ handleCoinIncrease }) => {
       <div className="border-[#E7FE29] border rounded-xl py-2 px-2">
         {" "}
         <button
-          onClick={() => handleCoinIncrease(30)}
+          onClick={() => handleCoinIncrease(100000)}
           className="btn border-[#E7FE29] bg-[#E7FE29] text-black  btn-outline"
         >
           Claim Free Credit
