@@ -26,7 +26,7 @@ const Navbar = ({availableBalance}) => {
           </li>
         </ul>
         <div className="flex items-center gap-2 border border-[#13131310] py-1 px-3 rounded-lg shadow">
-          <p><span className="font-bold">{availableBalance}</span>Coin</p>
+          <p className="font-bold"><span className="font-bold">{availableBalance}</span> Coin</p>
           <img className="w-[20px] h-[20px]" src={coin} alt="" />
         </div>
       </div>

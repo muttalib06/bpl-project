@@ -11,12 +11,26 @@ const fetchPlayers = () => {
 const playersPromise = fetchPlayers();
 
 function App() {
+  const [selectedPlayer, setSelectedPlayer] = useState([]);
   const [available, setAvailable] = useState(true);
-
   const [availableBalance, setAvailableBalance] = useState(2500000);
   const handleCoinIncrease = (coin) => {
     const addCoins = availableBalance + coin;
     setAvailableBalance(addCoins);
+  };
+
+  const handleSelectedPlayer = (player) => {
+    const selectedPlayers = [...selectedPlayer, player];
+    setSelectedPlayer(selectedPlayers);
+  };
+  const removePlayer = (player) => {
+    const filterPlayers = selectedPlayer.filter((p) => p.name !== player.name);
+    setSelectedPlayer(filterPlayers);
+  };
+
+  const backBalance = (backPrice) => {
+    const newAvailableBalance = availableBalance + backPrice;
+    setAvailableBalance(newAvailableBalance);
   };
 
   return (
@@ -25,7 +39,9 @@ function App() {
       <Banner handleCoinIncrease={handleCoinIncrease}></Banner>
 
       <div className="max-w-[80%] mx-auto flex justify-between items-center my-5">
-        <h2 className="font-bold text-2xl">Available Players</h2>
+        <h2 className="font-bold text-2xl">
+          {available ? "Available Players" : "Selected Player (4/6)"}
+        </h2>
         <div>
           <button
             onClick={() => setAvailable(true)}
@@ -41,7 +57,7 @@ function App() {
               available === false ? "bg-[#E7FE29]" : " "
             }`}
           >
-            Selected <span> (0) </span>
+            Selected <span> ({selectedPlayer.length}) </span>
           </button>
         </div>
       </div>
@@ -49,13 +65,18 @@ function App() {
       {available === true ? (
         <Suspense fallback={<Spinner1></Spinner1>}>
           <AvailablePlayers
+            handleSelectedPlayer={handleSelectedPlayer}
             availableBalance={availableBalance}
             setAvailableBalance={setAvailableBalance}
             playersPromise={playersPromise}
           ></AvailablePlayers>
         </Suspense>
       ) : (
-        <Selected></Selected>
+        <Selected
+          backBalance={backBalance}
+          selectedPlayer={selectedPlayer}
+          removePlayer={removePlayer}
+        ></Selected>
       )}
     </>
   );

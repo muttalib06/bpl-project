@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import nameIcon from "../../assets/user 1.png";
 import flagIcon from "../../assets/Group.png";
 
-const Player = ({ player, setAvailableBalance, availableBalance }) => {
+const Player = ({ player, setAvailableBalance, availableBalance,handleSelectedPlayer }) => {
+  const [disableBtn, setDisableBtn] = useState(false);
   const handleBalance = (playerData) => {
     const playerPrice = playerData.price;
     if (availableBalance < playerPrice) {
@@ -41,8 +42,20 @@ const Player = ({ player, setAvailableBalance, availableBalance }) => {
         </div>
         <div className="flex items-center justify-between">
           <h3 className="font-bold">Price:{player.price} </h3>
-          <button onClick={() => handleBalance(player)} className="btn">
-            Choose Player
+          <button
+            disabled={disableBtn}
+            onClick={() => {
+              handleBalance(player);
+              if (availableBalance < player.price) {
+                setDisableBtn(false);
+                return;
+              }
+              setDisableBtn(true);
+              handleSelectedPlayer(player)
+            }}
+            className="btn"
+          >
+            {disableBtn ? "selected" : "Choose Player"}
           </button>
         </div>
       </div>
