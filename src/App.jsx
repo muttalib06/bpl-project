@@ -20,8 +20,12 @@ function App() {
   };
 
   const handleSelectedPlayer = (player) => {
-    const selectedPlayers = [...selectedPlayer, player];
-    setSelectedPlayer(selectedPlayers);
+    const selectPlayers = [...selectedPlayer, player];
+    if (selectedPlayer.length === 6) {
+      alert("selected players already 6");
+      return;
+    }
+    setSelectedPlayer(selectPlayers);
   };
   const removePlayer = (player) => {
     const filterPlayers = selectedPlayer.filter((p) => p.name !== player.name);
@@ -65,6 +69,7 @@ function App() {
       {available === true ? (
         <Suspense fallback={<Spinner1></Spinner1>}>
           <AvailablePlayers
+            selectedPlayer={selectedPlayer}
             handleSelectedPlayer={handleSelectedPlayer}
             availableBalance={availableBalance}
             setAvailableBalance={setAvailableBalance}

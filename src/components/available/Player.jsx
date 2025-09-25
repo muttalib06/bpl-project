@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import nameIcon from "../../assets/user 1.png";
 import flagIcon from "../../assets/Group.png";
 
-const Player = ({ player, setAvailableBalance, availableBalance,handleSelectedPlayer }) => {
+const Player = ({
+  player,
+  setAvailableBalance,
+  availableBalance,
+  handleSelectedPlayer,
+  selectedPlayer,
+}) => {
   const [disableBtn, setDisableBtn] = useState(false);
   const handleBalance = (playerData) => {
     const playerPrice = playerData.price;
@@ -46,12 +52,15 @@ const Player = ({ player, setAvailableBalance, availableBalance,handleSelectedPl
             disabled={disableBtn}
             onClick={() => {
               handleBalance(player);
-              if (availableBalance < player.price) {
+              if (
+                availableBalance < player.price ||
+                selectedPlayer.length === 6
+              ) {
                 setDisableBtn(false);
                 return;
               }
               setDisableBtn(true);
-              handleSelectedPlayer(player)
+              handleSelectedPlayer(player);
             }}
             className="btn"
           >
